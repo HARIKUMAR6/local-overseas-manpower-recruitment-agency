@@ -1,0 +1,109 @@
+/* =========================================================================
+   ORIVANTA GLOBAL MOBILITY — Tailwind CSS v4 entry
+   Build:  npm run build   (minified → assets/css/main.css)
+   Watch:  npm run dev
+   ========================================================================= */
+@import "tailwindcss" source(none);
+
+@source "../../*.html";
+@source "../../assets/js/**/*.js";
+
+@import "./tokens.css";
+@import "./base.css";
+@import "./components.css";
+@import "./pages.css";
+@import "./pages-p3.css";
+@import "./pages-p4.css";
+
+/* Theme is driven by [data-theme] on <html>, not the OS media query. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@custom-variant rtl (&:where([dir="rtl"], [dir="rtl"] *));
+@custom-variant ltr (&:where([dir="ltr"], [dir="ltr"] *));
+
+/* ---- Static brand tokens ------------------------------------------------ */
+@theme {
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --color-navy-950: #071624;
+  --color-navy-900: #0b1e2e;
+  --color-navy-800: #102c43; /* Brand Deep Navy */
+  --color-navy-700: #1a3d5a;
+  --color-navy-600: #2a5374;
+  --color-gold-200: #f0e2c2;
+  --color-gold-300: #e6cf9d;
+  --color-gold-400: #d7b46a; /* Brand Warm Gold */
+  --color-gold-500: #c49c4c;
+  --color-gold-700: #7a5c1c; /* Gold for text on light surfaces (AA) */
+  --color-ivory: #f7f5ef;    /* Brand Ivory */
+  --color-ivory-200: #efebe0;
+  --color-slate-brand: #64748b; /* Brand Slate — decorative / large text only */
+  --color-slate-ink: #4a5a6e;   /* Slate for body text (AA on ivory) */
+
+  /* Fluid type scale */
+  --text-display: clamp(2.5rem, 1.55rem + 3.8vw, 4.75rem);
+  --text-display--line-height: 1.04;
+  --text-display--letter-spacing: -0.025em;
+  --text-h1: clamp(2.125rem, 1.55rem + 2.5vw, 3.625rem);
+  --text-h1--line-height: 1.08;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h2: clamp(1.75rem, 1.35rem + 1.75vw, 2.875rem);
+  --text-h2--line-height: 1.12;
+  --text-h2--letter-spacing: -0.018em;
+  --text-h3: clamp(1.3125rem, 1.15rem + 0.7vw, 1.75rem);
+  --text-h3--line-height: 1.25;
+  --text-h4: 1.1875rem;
+  --text-h4--line-height: 1.35;
+  --text-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-lead--line-height: 1.6;
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.2;
+  --text-eyebrow--letter-spacing: 0.18em;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  /* Navy-tinted shadows */
+  --shadow-xs: 0 1px 2px rgb(16 44 67 / 0.06);
+  --shadow-soft: 0 2px 6px rgb(16 44 67 / 0.05), 0 8px 24px -6px rgb(16 44 67 / 0.1);
+  --shadow-lift: 0 4px 10px rgb(16 44 67 / 0.06), 0 22px 48px -12px rgb(16 44 67 / 0.22);
+
+  --ease-premium: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Breakpoints (Tailwind defaults kept explicit for documentation) */
+  --breakpoint-sm: 40rem;  /* 640  */
+  --breakpoint-md: 48rem;  /* 768  */
+  --breakpoint-lg: 64rem;  /* 1024 */
+  --breakpoint-xl: 80rem;  /* 1280 — desktop navigation */
+  --breakpoint-2xl: 96rem; /* 1536 */
+}
+
+/* ---- Semantic, theme-aware tokens (resolve to CSS variables) ------------ */
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary: var(--on-primary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+}
+
+/* Copy-aligned stacks: always left (LTR & RTL), per the "never right-aligned"
+   rule. Use with variants, e.g. `justify-items-center sm:justify-copy`. */
+@utility justify-copy {
+  justify-items: left;
+}

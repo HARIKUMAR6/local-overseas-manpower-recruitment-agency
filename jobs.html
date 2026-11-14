@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f5ef" />
+  <title>Job Openings — ORIVANTA GLOBAL MOBILITY</title>
+  <meta name="description" content="Search overseas job openings by title, sector and destination, explore employment sectors and learn how to apply with ORIVANTA GLOBAL MOBILITY." />
+
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Manrope:wght@400..800&display=swap" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg" />
+  <link rel="preload" as="image" href="assets/images/jobs/jb-hero.webp" imagesrcset="assets/images/jobs/jb-hero-800.webp 800w, assets/images/jobs/jb-hero.webp 2000w" imagesizes="(min-width: 1024px) 600px, 92vw" fetchpriority="high" />
+
+  <script type="module" src="assets/js/main.js"></script>
+  <script type="module" src="assets/js/pages/jobs.js"></script>
+</head>
+<body data-page="jobs">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-site-header></div>
+
+  <main id="main" tabindex="-1" class="outline-none">
+
+    <!-- 1 · HERO -->
+    <section class="hero-frame hero-jobs" aria-labelledby="hero-title">
+      <div class="container-site">
+        <div class="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-16">
+          <div class="grid justify-items-center gap-6 text-center lg:justify-copy lg:text-left" data-reveal-stagger>
+            <span class="eyebrow" data-reveal>Job openings</span>
+            <h1 id="hero-title" class="t-display" data-reveal>Find your next role <em class="t-italic-accent">overseas</em>.</h1>
+            <p class="t-lead max-w-xl" data-reveal>Search by job title or sector, then apply with our team beside you.</p>
+            <form class="quick-find" id="hero-find" role="search" action="jobs.html#openings" method="get" data-reveal>
+              <div class="quick-find__row">
+                <div class="input-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label class="sr-only" for="h-q">Job title</label><input class="input" id="h-q" name="q" type="search" placeholder="Job title" autocomplete="off" /></div>
+                <div><label class="sr-only" for="h-sector">Sector</label><select class="select" id="h-sector" name="sector"><option value="">All sectors</option></select></div>
+              </div>
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Search openings <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
+            </form>
+          </div>
+          <div class="jobs-visual" data-reveal="zoom">
+            <div class="media media-3x2"><img src="assets/images/jobs/jb-hero.webp" srcset="assets/images/jobs/jb-hero-800.webp 800w, assets/images/jobs/jb-hero.webp 2000w" sizes="(min-width: 1024px) 600px, 92vw" width="2000" height="1336" alt="Travellers walking through a bright airport terminal" fetchpriority="high" decoding="async" /></div>
+            <div class="jobs-visual__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg><span>Verified openings only</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · SEARCH & FILTERS -->
+    <section class="section-sm section-alt" id="search" aria-labelledby="search-title">
+      <div class="container-site">
+        <h2 id="search-title" class="sr-only">Search and filter openings</h2>
+        <form class="filter-bar" id="job-filters" role="search" data-reveal>
+          <div class="filter-bar__row">
+            <div class="field"><label class="label" for="f-q">Job title</label><div class="input-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="input" id="f-q" name="q" type="search" placeholder="e.g. Welder, Nurse, Driver" autocomplete="off" /></div></div>
+            <div class="field"><label class="label" for="f-sector">Sector</label><select class="select" id="f-sector" name="sector"><option value="">All sectors</option></select></div>
+            <div class="field"><label class="label" for="f-dest">Destination</label><select class="select" id="f-dest" name="destination"><option value="">All destinations</option></select></div>
+            <button class="btn btn-secondary" type="button" id="f-reset">Reset</button>
+          </div>
+          <div class="filter-bar__foot"><p class="filter-status" id="job-count" role="status" aria-live="polite">Loading openings</p></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 3 · CURRENT OPENINGS -->
+    <section class="section" id="openings" aria-labelledby="openings-title">
+      <div class="container-site">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Current openings</span>
+          <h2 id="openings-title">Open positions</h2>
+          <p>Every listing is confirmed with the employer before it is published.</p>
+        </div>
+
+        <div class="job-list" id="job-list" hidden></div>
+
+        <div class="job-empty" id="jobs-none" data-reveal>
+          <span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+          <h3>No openings are listed right now</h3>
+          <p class="t-muted">New roles are published here once they are confirmed. Tell us your skills and preferred destination, and our team will contact you when a suitable role opens.</p>
+          <div class="btn-group btn-group--center">
+            <a class="btn btn-primary btn-lg" href="contact.html#apply">Register your interest <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+            <a class="btn btn-secondary btn-lg" href="#guide">How to apply</a>
+          </div>
+        </div>
+
+        <div class="job-empty" id="jobs-nomatch" hidden>
+          <h3>No openings match your search</h3>
+          <p class="t-muted">Try a different title, sector or destination.</p>
+          <button class="btn btn-primary" type="button" data-reset-filters>Clear filters</button>
+        </div>
+
+        <div class="interest-strip" id="interest-strip" hidden>
+          <div><h3>Do not see your role?</h3><p>Register your interest and we will contact you when a suitable opening is confirmed.</p></div>
+          <a class="btn btn-primary" href="contact.html#apply">Register interest</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · EMPLOYMENT SECTORS -->
+    <section class="section section-alt" id="sectors" aria-labelledby="sectors-title">
+      <div class="container-site">
+        <div class="section-head section-head--center" data-reveal>
+          <span class="eyebrow">Employment sectors</span>
+          <h2 id="sectors-title">Explore by sector</h2>
+          <p>Select a sector to filter the openings above.</p>
+        </div>
+        <div class="sector-grid" data-reveal-stagger>
+          <button type="button" class="sector" data-sector="construction" data-reveal><img src="assets/images/jobs/jb-sec-construction.webp" srcset="assets/images/jobs/jb-sec-construction-800.webp 800w, assets/images/jobs/jb-sec-construction.webp 1600w" sizes="(min-width: 1024px) 700px, 92vw" width="1600" height="1200" alt="" loading="lazy" decoding="async" /><span class="sector__body"><h3>Construction</h3><p>Site, civil and structural roles</p><span class="sector__go">View openings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></span></button>
+          <button type="button" class="sector" data-sector="healthcare" data-reveal><img src="assets/images/jobs/jb-sec-healthcare.webp" srcset="assets/images/jobs/jb-sec-healthcare-800.webp 800w, assets/images/jobs/jb-sec-healthcare.webp 2000w" sizes="(min-width: 1024px) 500px, 92vw" width="2000" height="1333" alt="" loading="lazy" decoding="async" /><span class="sector__body"><h3>Healthcare</h3><p>Clinical and care support roles</p><span class="sector__go">View openings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></span></button>
+          <button type="button" class="sector" data-sector="hospitality" data-reveal><img src="assets/images/jobs/jb-sec-hospitality.webp" srcset="assets/images/jobs/jb-sec-hospitality-800.webp 800w, assets/images/jobs/jb-sec-hospitality.webp 2000w" sizes="(min-width: 1024px) 500px, 92vw" width="2000" height="1333" alt="" loading="lazy" decoding="async" /><span class="sector__body"><h3>Hospitality</h3><p>Hotels, resorts and dining</p><span class="sector__go">View openings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></span></button>
+          <button type="button" class="sector" data-sector="manufacturing" data-reveal><img src="assets/images/jobs/jb-sec-manufacturing.webp" srcset="assets/images/jobs/jb-sec-manufacturing-800.webp 800w, assets/images/jobs/jb-sec-manufacturing.webp 1600w" sizes="(min-width: 1024px) 700px, 92vw" width="1600" height="1200" alt="" loading="lazy" decoding="async" /><span class="sector__body"><h3>Manufacturing</h3><p>Production and technical roles</p><span class="sector__go">View openings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></span></button>
+          <button type="button" class="sector" data-sector="logistics" data-reveal><img src="assets/images/jobs/jb-sec-logistics.webp" srcset="assets/images/jobs/jb-sec-logistics-800.webp 800w, assets/images/jobs/jb-sec-logistics.webp 2000w" sizes="(min-width: 1024px) 700px, 92vw" width="2000" height="1334" alt="" loading="lazy" decoding="async" /><span class="sector__body"><h3>Logistics</h3><p>Warehousing and transport</p><span class="sector__go">View openings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></span></button>
+          <button type="button" class="sector" data-sector="energy" data-reveal><img src="assets/images/jobs/jb-sec-energy.webp" srcset="assets/images/jobs/jb-sec-energy-800.webp 800w, assets/images/jobs/jb-sec-energy.webp 2000w" sizes="(min-width: 1024px) 500px, 92vw" width="2000" height="1500" alt="" loading="lazy" decoding="async" /><span class="sector__body"><h3>Energy</h3><p>Oil, gas and industrial plants</p><span class="sector__go">View openings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · CANDIDATE GUIDE -->
+    <section class="section" id="guide" aria-labelledby="guide-title">
+      <div class="container-site">
+        <div class="split split--stretch">
+          <div class="grid justify-items-center gap-6 text-center lg:justify-copy lg:text-left" data-reveal-stagger>
+            <span class="eyebrow" data-reveal>Candidate guide</span>
+            <h2 id="guide-title" data-reveal>What you need to apply</h2>
+            <div class="media media-3x2 w-full" data-reveal="zoom"><img src="assets/images/jobs/jb-guide.webp" srcset="assets/images/jobs/jb-guide-800.webp 800w, assets/images/jobs/jb-guide.webp 2000w" sizes="(min-width: 1024px) 560px, 92vw" width="2000" height="1333" alt="A traveller with a suitcase looking out over an airport apron" loading="lazy" decoding="async" /></div>
+            <div class="req-card w-full" data-reveal>
+              <h3>Typically required</h3>
+              <ul class="req-list" role="list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg><div><strong>Valid passport</strong><span>With enough validity for the contract period.</span></div></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg><div><strong>Updated CV</strong><span>Showing your skills and work experience.</span></div></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg><div><strong>Qualifications &amp; certificates</strong><span>Relevant to the role you are applying for.</span></div></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg><div><strong>Destination documents</strong><span>Any checks or clearances the destination requires.</span></div></li>
+              </ul>
+            </div>
+          </div>
+          <ol class="steps" data-reveal-stagger>
+            <li class="step" data-reveal><span class="step__n">1</span><div><h3>Choose a role</h3><p>Browse openings, or register your interest if none fit yet.</p></div></li>
+            <li class="step" data-reveal><span class="step__n">2</span><div><h3>Apply</h3><p>Send your details and preferred role through the application form.</p></div></li>
+            <li class="step" data-reveal><span class="step__n">3</span><div><h3>Screening</h3><p>A short conversation to understand your skills and goals.</p></div></li>
+            <li class="step" data-reveal><span class="step__n">4</span><div><h3>Documents &amp; offer</h3><p>Prepare your paperwork and review any employer offer.</p></div></li>
+            <li class="step" data-reveal><span class="step__n">5</span><div><h3>Departure</h3><p>Visa steps and travel preparation, with our support.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · CTA -->
+    <section class="section section-alt" aria-labelledby="cta-title">
+      <div class="container-site">
+        <div class="cta-duo" data-reveal="zoom">
+          <div class="cta-duo__body">
+            <span class="eyebrow">Ready to apply?</span>
+            <h2 id="cta-title">Your next role starts with one form</h2>
+            <p class="t-lead">Tell us about your skills and goals. We will guide you from there.</p>
+            <div class="btn-group btn-group--split w-full lg:w-auto">
+              <a class="btn btn-accent btn-lg" href="contact.html#apply">Apply Now <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+              <a class="btn btn-secondary btn-lg" href="about.html">About ORIVANTA</a>
+            </div>
+          </div>
+          <div class="cta-duo__img"><img src="assets/images/jobs/jb-cta.webp" srcset="assets/images/jobs/jb-cta-800.webp 800w, assets/images/jobs/jb-cta.webp 2000w" sizes="(min-width: 1024px) 520px, 100vw" width="2000" height="1333" alt="" loading="lazy" decoding="async" /></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>

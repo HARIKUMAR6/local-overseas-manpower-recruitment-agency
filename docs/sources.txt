@@ -1,0 +1,88 @@
+PRIVATE — not linked from any page; exclude docs/ from public deploys.
+Image sources & licence reference. All photos: Pexels (https://www.pexels.com/license/ — free for commercial use, no attribution required).
+Photographer names are on each source page; Pexels does not expose them via the image server.
+Columns: final file | source page | original photo ID | slot ratio
+
+h1-hero-main.webp | https://www.pexels.com/photo/4173205/ | 4173205 | 3:2
+h1-hero-inset.webp | https://www.pexels.com/photo/5439142/ | 5439142 | 4:5
+h1-dest-uae.webp | https://www.pexels.com/photo/10549886/ | 10549886 | 4:3
+h1-dest-singapore.webp | https://www.pexels.com/photo/32850838/ | 32850838 | 4:3
+h1-dest-germany.webp | https://www.pexels.com/photo/3824718/ | 3824718 | 4:3
+h1-dest-canada.webp | https://www.pexels.com/photo/19643388/ | 19643388 | 4:3
+h1-dest-japan.webp | https://www.pexels.com/photo/31393692/ | 31393692 | 4:3
+h1-dest-australia.webp | https://www.pexels.com/photo/26834860/ | 26834860 | 4:3
+h1-job-welder.webp | https://www.pexels.com/photo/29543207/ | 29543207 | 3:2
+h1-job-nurse.webp | https://www.pexels.com/photo/8460373/ | 8460373 | 3:2
+h1-job-chef.webp | https://www.pexels.com/photo/36430080/ | 36430080 | 3:2
+h1-job-driver.webp | https://www.pexels.com/photo/14797994/ | 14797994 | 3:2
+h1-ind-construction.webp | https://www.pexels.com/photo/4513940/ | 4513940 | 4:3
+h1-ind-healthcare.webp | https://www.pexels.com/photo/8459996/ | 8459996 | 4:3
+h1-ind-hospitality.webp | https://www.pexels.com/photo/6758532/ | 6758532 | 4:3
+h1-ind-manufacturing.webp | https://www.pexels.com/photo/18293962/ | 18293962 | 4:3
+h1-ind-logistics.webp | https://www.pexels.com/photo/36652842/ | 36652842 | 4:3
+h1-ind-energy.webp | https://www.pexels.com/photo/32399141/ | 32399141 | 4:3
+h1-why-team.webp | https://www.pexels.com/photo/7888809/ | 7888809 | 4:5
+h1-process-docs.webp | https://www.pexels.com/photo/33497885/ | 33497885 | 16:9
+h1-story-1.webp | https://www.pexels.com/photo/8990559/ | 8990559 | 4:5
+h1-story-2.webp | https://www.pexels.com/photo/18828741/ | 18828741 | 4:5
+h1-story-3.webp | https://www.pexels.com/photo/5920775/ | 5920775 | 4:5
+h1-cta.webp | https://www.pexels.com/photo/9434908/ | 9434908 | 21:9
+h2-hero-a.webp | https://www.pexels.com/photo/11045296/ | 11045296 | 3:4
+h2-hero-b.webp | https://www.pexels.com/photo/10202856/ | 10202856 | 4:3
+h2-hero-c.webp | https://www.pexels.com/photo/22046211/ | 22046211 | 1:1
+h2-country-qatar.webp | https://www.pexels.com/photo/6501897/ | 6501897 | 3:4
+h2-country-saudi.webp | https://www.pexels.com/photo/15839821/ | 15839821 | 3:4
+h2-country-malaysia.webp | https://www.pexels.com/photo/5904675/ | 5904675 | 3:4
+h2-country-poland.webp | https://www.pexels.com/photo/17741460/ | 17741460 | 3:4
+h2-country-uk.webp | https://www.pexels.com/photo/16643413/ | 16643413 | 3:4
+h2-country-newzealand.webp | https://www.pexels.com/photo/5342977/ | 5342977 | 3:4
+h2-ind-renewable.webp | https://www.pexels.com/photo/4254165/ | 4254165 | 16:10
+h2-ind-aviation.webp | https://www.pexels.com/photo/5493554/ | 5493554 | 4:3
+h2-ind-marine.webp | https://www.pexels.com/photo/37663559/ | 37663559 | 4:3
+h2-ind-automotive.webp | https://www.pexels.com/photo/8986101/ | 8986101 | 4:3
+h2-ind-agri.webp | https://www.pexels.com/photo/7299976/ | 7299976 | 4:3
+h2-disc-trades.webp | https://www.pexels.com/photo/27928762/ | 27928762 | 16:10
+h2-disc-care.webp | https://www.pexels.com/photo/29372734/ | 29372734 | 16:10
+h2-disc-transport.webp | https://www.pexels.com/photo/15016531/ | 15016531 | 16:10
+h2-disc-service.webp | https://www.pexels.com/photo/9462786/ | 9462786 | 16:10
+h2-expertise.webp | https://www.pexels.com/photo/7693103/ | 7693103 | 3:2
+h2-advantage.webp | https://www.pexels.com/photo/7693159/ | 7693159 | 3:2
+h2-journey.webp | https://www.pexels.com/photo/10040637/ | 10040637 | 21:9
+h2-cta.webp | https://www.pexels.com/photo/18955879/ | 18955879 | 16:9
+
+Phase 1 styleguide images (Unsplash License, https://unsplash.com/license):
+assets/images/global-travel.jpg | Unsplash photo-1436491865332-7a61a109cc05
+assets/images/team-collaboration.jpg | Unsplash photo-1521737604893-d14cc237f11d
+
+Substitution notes:
+h1-hero-main: two professionals holding passports in an airport corridor (no luggage) — closest free match to the brief.
+h1-story-2: healthcare professional in white coat with scrubs (doctor), chosen as a smiling portrait.
+h1-story-3: smiling hospitality worker (waiter in apron).
+h1-process-docs: passports and travel documents (no pen) — warm-neutral flat lay.
+h2-cta: person looking over a hazy city at dawn from a balcony (silhouette).
+
+# Phase 3 — About & Job Openings (Pexels licence; photographer names appear on each source page)
+about/ab-hero.webp | https://www.pexels.com/photo/8518623/ | 8518623 | Pexels License | 3:2
+about/ab-overview.webp | https://www.pexels.com/photo/7688339/ | 7688339 | Pexels License | 4:3
+about/ab-expertise.webp | https://www.pexels.com/photo/7691694/ | 7691694 | Pexels License | 3:2
+about/ab-ethics.webp | https://www.pexels.com/photo/5989941/ | 5989941 | Pexels License | 3:2
+about/ab-cta.webp | https://www.pexels.com/photo/18848926/ | 18848926 | Pexels License (uploader: Resume Genius) | 3:2
+jobs/jb-hero.webp | https://www.pexels.com/photo/6726195/ | 6726195 | Pexels License | 3:2
+jobs/jb-guide.webp | https://www.pexels.com/photo/1381415/ | 1381415 | Pexels License | 3:2
+jobs/jb-cta.webp | https://www.pexels.com/photo/7710178/ | 7710178 | Pexels License | 3:2
+jobs/jb-sec-construction.webp | https://www.pexels.com/photo/12335028/ | 12335028 | Pexels License | 4:3 crop
+jobs/jb-sec-healthcare.webp | https://www.pexels.com/photo/6098051/ | 6098051 | Pexels License | 3:2
+jobs/jb-sec-hospitality.webp | https://www.pexels.com/photo/3770110/ | 3770110 | Pexels License (Andrea Piacquadio) | 3:2
+jobs/jb-sec-manufacturing.webp | https://www.pexels.com/photo/28806603/ | 28806603 | Pexels License (Hanna Alves) | 4:3 crop
+jobs/jb-sec-logistics.webp | https://www.pexels.com/photo/40382472/ | 40382472 | Pexels License | 3:2
+jobs/jb-sec-energy.webp | https://www.pexels.com/photo/3216911/ | 3216911 | Pexels License | 4:3
+
+# Phase 4 — Process & Contact (Pexels licence; photographer names on each source page)
+process/pr-consult.webp | https://www.pexels.com/photo/7979415/ | 7979415 | Pexels License
+process/pr-evaluate.webp | https://www.pexels.com/photo/7821674/ | 7821674 | Pexels License
+process/pr-matching.webp | https://www.pexels.com/photo/4226118/ | 4226118 | Pexels License (Anna Shvets)
+process/pr-docs.webp | https://www.pexels.com/photo/4922356/ | 4922356 | Pexels License
+contact/ct-hero.webp | https://www.pexels.com/photo/7709235/ | 7709235 | Pexels License (MART PRODUCTION)
+contact/ct-apply.webp | https://www.pexels.com/photo/7821577/ | 7821577 | Pexels License (RDNE Stock project)
+# Map: Leaflet 1.9.4 (cdnjs, BSD-2) with OpenStreetMap tiles (ODbL; attribution shown on map).
+process/pr-hero.webp | https://www.pexels.com/photo/12932352/ | 12932352 | Pexels License (Atlantic Ambience) | Process hero background

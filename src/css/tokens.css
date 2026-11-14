@@ -1,0 +1,91 @@
+/* =========================================================================
+   Theme tokens — light (default) and dark.
+   All contrast pairs verified ≥ 4.5:1 for text (see README → Contrast).
+   ========================================================================= */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --canvas: #f7f5ef;
+  --surface: #ffffff;
+  --surface-2: #efebe0;
+  --ink: #102c43;
+  --muted: #4a5a6e;
+  --line: #e3ddcf;
+  --line-strong: #cbc1ab;
+  --primary: #102c43;
+  --primary-hover: #1a3d5a;
+  --on-primary: #ffffff;
+  --accent: #d7b46a;
+  --accent-hover: #cba658;
+  --on-accent: #102c43;
+  --accent-ink: #7a5c1c;
+  --ring: #7a5c1c;
+  --danger: #b42318;
+  --success: #17663a;
+  --header-bg: rgb(247 245 239 / 0.86);
+  --overlay: rgb(7 22 36 / 0.62);
+  --emblem-knockout: var(--canvas);
+
+  /* Layout system */
+  --header-h: 72px;
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2rem);
+  --container-max: 80rem;      /* 1280px */
+  --container-narrow: 48rem;   /* 768px  */
+  --section-y: clamp(4rem, 2.75rem + 5vw, 7.5rem);
+  --section-y-sm: clamp(3rem, 2.25rem + 3vw, 5rem);
+  --hero-min: clamp(560px, 82svh, 860px);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: #0a1a28;
+  --surface: #0f2436;
+  --surface-2: #153049;
+  --ink: #f3f0e8;
+  --muted: #a9b6c6;
+  --line: #1f3a54;
+  --line-strong: #2f5170;
+  --primary: #f7f5ef;
+  --primary-hover: #ffffff;
+  --on-primary: #102c43;
+  --accent: #d7b46a;
+  --accent-hover: #e3c687;
+  --on-accent: #0b1e2e;
+  --accent-ink: #e0c27e;
+  --ring: #e0c27e;
+  --danger: #f97066;
+  --success: #4ade80;
+  --header-bg: rgb(10 26 40 / 0.84);
+  --overlay: rgb(4 12 20 / 0.7);
+}
+
+@media (min-width: 80rem) {
+  :root { --header-h: 84px; }
+}
+
+/* Always-navy band (footer, CTA strips) — independent of theme */
+.section-inverse,
+.site-footer {
+  --canvas: #102c43;
+  --surface: #153652;
+  --surface-2: #1a3d5a;
+  --ink: #f7f5ef;
+  --muted: #b9c5d3;
+  --line: #24476a;
+  --line-strong: #345b80;
+  --primary: #f7f5ef;
+  --primary-hover: #ffffff;
+  --on-primary: #102c43;
+  --accent-ink: #d7b46a;
+  --ring: #e0c27e;
+  --emblem-knockout: #102c43;
+  color-scheme: dark;
+}
+[data-theme="dark"] .section-inverse,
+[data-theme="dark"] .site-footer {
+  --canvas: #071624;
+  --surface: #0c2133;
+  --surface-2: #11293f;
+  --line: #1b3650;
+  --emblem-knockout: #071624;
+}

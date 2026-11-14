@@ -1,0 +1,15 @@
+{
+  "name": "orivanta-global-mobility",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ORIVANTA GLOBAL MOBILITY — premium overseas manpower recruitment agency website (HTML5 + Tailwind CSS v4 + Vanilla JS).",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/css/input.css -o ./assets/css/main.css --watch",
+    "build": "tailwindcss -i ./src/css/input.css -o ./assets/css/main.css --minify",
+    "build:dev": "tailwindcss -i ./src/css/input.css -o ./assets/css/main.css"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}

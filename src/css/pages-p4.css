@@ -1,0 +1,163 @@
+/* =========================================================================
+   Phase 4 — Process & Contact compositions.
+   Logical properties only; copy is never right-aligned.
+   ========================================================================= */
+@layer components {
+
+  /* ---------- PROCESS hero: journey route ------------------------------ */
+  .hero-journey {
+    --canvas: #102c43; --surface: #153652; --surface-2: #1a3d5a; --ink: #f7f5ef; --muted: #d5dde6; --line: #24476a; --line-strong: #345b80; --accent-ink: #e6cf9d; --ring: #e0c27e;
+    background: var(--canvas); color: var(--ink); overflow: clip; text-align: center;
+  }
+  [data-theme="dark"] .hero-journey { --canvas: #071624; --surface: #0c2133; --surface-2: #11293f; --line: #1b3650; }
+  .hero-journey__bg { position: absolute; inset: 0; z-index: -2; }
+  .hero-journey__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 38% 55%; }
+  @media (min-width: 48rem) { .hero-journey__bg img { object-position: 50% 50%; } }
+  .hero-journey::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(60% 55% at 50% 38%, rgb(7 22 36 / 0.38), transparent 75%),
+      linear-gradient(180deg, rgb(7 22 36 / 0.82) 0%, rgb(7 22 36 / 0.74) 45%, rgb(7 22 36 / 0.9) 100%);
+  }
+  .hero-journey h1 { color: #f7f5ef; }
+  .hero-journey .btn-secondary { color: #f7f5ef; border-color: rgb(247 245 239 / 0.5); }
+  .hero-journey .btn-secondary:hover { background: rgb(247 245 239 / 0.12); border-color: #f7f5ef; }
+  .hero-journey__copy { display: grid; gap: 1.25rem; justify-items: center; max-width: 44rem; margin-inline: auto; }
+  .route { position: relative; display: grid; gap: 0.75rem; margin: clamp(2rem, 1.5rem + 2vw, 3.5rem) auto 0; max-width: 60rem; padding: 0; list-style: none; }
+  @media (min-width: 48rem) {
+    .route { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+    .route::before {
+      content: ""; position: absolute; inset-inline: 12.5%; inset-block-start: 1.75rem; border-block-start: 2px dashed rgb(215 180 106 / 0.6);
+    }
+  }
+  .route__stop {
+    position: relative; display: grid; justify-items: center; gap: 0.625rem; padding: 0.75rem 0.5rem; border-radius: var(--radius-lg);
+    transition: transform 0.3s var(--ease-premium), background-color 0.25s ease;
+  }
+  .route__stop:hover { transform: translateY(-4px); background: rgb(247 245 239 / 0.06); }
+  .route__n {
+    position: relative; display: grid; place-items: center; width: 3.5rem; height: 3.5rem; border-radius: 50%;
+    background: #d7b46a; color: #102c43; font-family: var(--font-display); font-size: 1.25rem; font-weight: 600;
+    box-shadow: 0 0 0 6px rgb(7 22 36 / 0.7), 0 0 0 7px rgb(215 180 106 / 0.55);
+  }
+  .route__stop strong { font-size: 0.9375rem; font-weight: 800; color: #f7f5ef; }
+  .route__stop span:last-child { font-size: 0.8125rem; color: #d5dde6; }
+  .fine-print { font-size: 0.8125rem; color: var(--muted); max-width: 36rem; margin-inline: auto; }
+
+  /* ---------- PROCESS stages ------------------------------------------- */
+  .stage { position: relative; }
+  .stage__grid { display: grid; gap: clamp(2rem, 1.5rem + 2vw, 3rem); align-items: center; }
+  @media (min-width: 64rem) {
+    .stage__grid { grid-template-columns: minmax(0, 1fr) 5rem minmax(0, 1fr); gap: 0; }
+    .stage--flip .stage__copy { order: 3; }
+    .stage--flip .stage__node { order: 2; }
+    .stage--flip .stage__visual { order: 1; }
+    .stage::before { /* spine */
+      content: ""; position: absolute; inset-block: 0; inset-inline-start: 50%; border-inline-start: 2px dashed color-mix(in srgb, var(--accent) 70%, transparent); translate: -1px 0;
+    }
+    [dir="rtl"] .stage::before { translate: 1px 0; }
+  }
+  .stage__node { display: none; }
+  @media (min-width: 64rem) {
+    .stage__node { display: grid; place-items: center; align-self: center; position: relative; z-index: 1; }
+    .stage__node span {
+      display: grid; place-items: center; width: 3.5rem; height: 3.5rem; border-radius: 50%; background: var(--accent); color: var(--on-accent);
+      font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; box-shadow: 0 0 0 6px var(--canvas), 0 0 0 7px var(--accent);
+    }
+    .section-alt .stage__node span { box-shadow: 0 0 0 6px var(--surface-2), 0 0 0 7px var(--accent); }
+  }
+  .stage__copy { display: grid; gap: 1.25rem; justify-items: center; text-align: center; }
+  @media (min-width: 64rem) {
+    .stage__copy { justify-items: left; text-align: left; padding-inline-end: 3rem; }
+    .stage--flip .stage__copy { padding-inline-end: 0; padding-inline-start: 3rem; }
+    .stage__visual { padding-inline-start: 3rem; }
+    .stage--flip .stage__visual { padding-inline-start: 0; padding-inline-end: 3rem; }
+  }
+  .stage__badge { display: inline-flex; align-items: center; gap: 0.5rem; height: 2rem; padding-inline: 0.875rem; border-radius: 999px; background: color-mix(in srgb, var(--accent) 22%, transparent); font-size: 0.8125rem; font-weight: 800; color: var(--ink); }
+  .ticks-list { display: grid; gap: 0.75rem; text-align: left; width: 100%; }
+  .ticks-list li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.75rem; align-items: start; font-size: 0.9375rem; }
+  .ticks-list svg { width: 1.25rem; height: 1.25rem; margin-block-start: 0.15rem; color: var(--accent-ink); }
+  .stage__visual .media { border-radius: var(--radius-xl); box-shadow: var(--shadow-lift); }
+  .stage__note {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.75rem; align-items: start; text-align: left; margin-block-start: 1rem;
+    padding: 1rem 1.25rem; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--line); font-size: 0.875rem; color: var(--muted);
+  }
+  .stage__note svg { width: 1.25rem; height: 1.25rem; color: var(--accent-ink); margin-block-start: 0.1rem; }
+  .cta-center {
+    --ink: #f7f5ef; --muted: #d5dde6; --accent-ink: #e6cf9d;
+    position: relative; isolation: isolate; overflow: hidden; display: grid; gap: 1.25rem; justify-items: center; text-align: center;
+    padding: clamp(2.5rem, 1.5rem + 5vw, 5rem) clamp(1.25rem, 1rem + 4vw, 4rem); border-radius: var(--radius-2xl); background: #102c43; color: #f7f5ef;
+  }
+  [data-theme="dark"] .cta-center { background: #0c2133; }
+  .cta-center::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(45% 80% at 50% 0%, rgb(215 180 106 / 0.28), transparent 70%); }
+  .cta-center h2 { color: #f7f5ef; max-width: 36rem; }
+  .cta-center p { max-width: 36rem; }
+  .cta-center .btn-secondary { color: #f7f5ef; border-color: rgb(247 245 239 / 0.5); }
+  .cta-center .btn-secondary:hover { background: rgb(247 245 239 / 0.12); border-color: #f7f5ef; }
+
+  /* ---------- CONTACT hero: arch --------------------------------------- */
+  .hero-contact { overflow: clip; }
+  .hero-contact::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: radial-gradient(40% 60% at 85% 50%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 70%);
+  }
+  .arch { position: relative; width: min(100%, 24rem); margin-inline: auto; }
+  .arch .media { border-radius: 999px 999px var(--radius-xl) var(--radius-xl); --ratio: 4 / 5; box-shadow: var(--shadow-lift); }
+  .arch::before {
+    content: ""; position: absolute; inset: -0.875rem; border: 1.5px solid var(--accent); border-radius: 999px 999px 2rem 2rem; opacity: 0.7; pointer-events: none;
+  }
+  .arch__chip {
+    position: absolute; inset-block-end: 1.5rem; inset-inline-start: -1rem; display: inline-flex; align-items: center; gap: 0.625rem;
+    padding: 0.75rem 1rem; border-radius: var(--radius-md); background: var(--surface); color: var(--ink); font-weight: 700; font-size: 0.875rem; box-shadow: var(--shadow-soft);
+  }
+  .arch__chip svg { width: 1.25rem; height: 1.25rem; color: var(--accent-ink); }
+
+  /* ---------- Contact details cards ------------------------------------ */
+  .info-grid { display: grid; gap: 1rem; }
+  @media (min-width: 40rem) { .info-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 64rem) { .info-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; } }
+  .info { display: grid; gap: 0.75rem; align-content: start; padding: 1.75rem; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--line); text-align: left; transition: transform 0.3s var(--ease-premium), box-shadow 0.3s var(--ease-premium), border-color 0.25s ease; }
+  .info:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: var(--accent); }
+  .info h3 { font-family: var(--font-sans); font-size: 1rem; font-weight: 800; }
+  .info p, .info a { font-size: 0.9375rem; color: var(--muted); overflow-wrap: anywhere; }
+  .info a { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  .info a:hover { text-decoration-thickness: 2px; }
+
+  /* ---------- Forms ---------------------------------------------------- */
+  .form-card { display: grid; gap: 1.25rem; padding: clamp(1.5rem, 1rem + 2vw, 2.5rem); border: 1px solid var(--line-strong); border-radius: var(--radius-xl); background: var(--surface); box-shadow: var(--shadow-soft); text-align: left; }
+  .form-grid { display: grid; gap: 1.25rem; }
+  .form-grid > .field { align-content: start; }
+  @media (min-width: 40rem) { .form-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .form-grid .span-2 { grid-column: 1 / -1; } }
+  .form-status { display: none; padding: 1rem 1.25rem; border-radius: var(--radius-md); border: 1px solid; font-size: 0.9375rem; font-weight: 600; text-align: left; }
+  .form-status.is-visible { display: block; }
+  .form-status--ok { background: color-mix(in srgb, var(--success) 12%, var(--surface)); border-color: var(--success); color: var(--ink); }
+  .form-status--error { background: color-mix(in srgb, var(--danger) 10%, var(--surface)); border-color: var(--danger); color: var(--ink); }
+  .form-status a { text-decoration: underline; text-underline-offset: 3px; }
+  .field.is-invalid .check { color: var(--danger); }
+  .aside-stack { display: grid; gap: 1.25rem; justify-items: center; text-align: center; }
+  @media (min-width: 64rem) { .aside-stack { justify-items: left; text-align: left; } }
+  .split--form { display: grid; gap: clamp(2rem, 1.5rem + 2vw, 3.5rem); align-items: start; }
+  @media (min-width: 64rem) { .split--form { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); } .split--form-r { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); } }
+
+  /* ---------- Map ------------------------------------------------------ */
+  .map-wrap { display: grid; gap: 1rem; }
+  @media (min-width: 64rem) { .map-wrap { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); align-items: stretch; } }
+  .map-card { display: grid; gap: 1rem; align-content: center; padding: 1.75rem; border-radius: var(--radius-xl); background: var(--surface); border: 1px solid var(--line); text-align: left; }
+  .map-card h3 { font-size: var(--text-h4); font-family: var(--font-sans); font-weight: 800; }
+  .map-card p { color: var(--muted); font-size: 0.9375rem; }
+  .map { position: relative; min-height: 22rem; height: 100%; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--line-strong); background: var(--surface-2); z-index: 0; }
+  @media (min-width: 64rem) { .map { min-height: 28rem; } }
+  [data-theme="dark"] .map .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.92); }
+  .map .leaflet-control-attribution { font-size: 0.6875rem; }
+  [data-theme="dark"] .map .leaflet-control-attribution, [data-theme="dark"] .map .leaflet-bar a { background: #153652; color: #f3f0e8; }
+  [data-theme="dark"] .map .leaflet-control-attribution a { color: #e0c27e; }
+  .map-pin { color: #102c43; filter: drop-shadow(0 4px 6px rgb(7 22 36 / 0.4)); }
+  .map-pin svg { width: 2.5rem; height: 2.5rem; }
+  .map .leaflet-popup-content { font-family: var(--font-sans); color: #102c43; text-align: left; }
+  .map-fallback { position: absolute; inset: 0; display: none; place-items: center; padding: 1.5rem; text-align: center; z-index: 400; background: var(--surface-2); }
+  .map-fallback.is-visible { display: grid; }
+}
+
+@layer components {
+  .check > span { unicode-bidi: plaintext; text-align: left; }
+}
