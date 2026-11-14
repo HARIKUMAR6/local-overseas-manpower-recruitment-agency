@@ -4,7 +4,7 @@
  * Optional: <div data-site-header data-variant="overlay"> → transparent header
  * floating over a dark hero until the page is scrolled.
  */
-import { NAV, CTA, SITE } from "./site-config.js";
+import { NAV, CTA, SITE, SOCIAL } from "./site-config.js";
 import { icons } from "./icons.js";
 import { emblem, brandLockup } from "./brand.js";
 
@@ -22,6 +22,14 @@ const dirToggle = () => `
     <button type="button" class="seg__btn" data-dir-option="ltr" aria-pressed="true">LTR</button>
     <button type="button" class="seg__btn" data-dir-option="rtl" aria-pressed="false">RTL</button>
   </div>`;
+
+const socialLinks = () =>
+  `<ul class="social" role="list" aria-label="Social media">${SOCIAL.map((s) => {
+    const url = (s.url || "").trim();
+    return url
+      ? `<li><a class="social__link" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${s.label} (opens in a new tab)">${icons[s.id]()}</a></li>`
+      : `<li><span class="social__link" role="img" aria-label="${s.label}">${icons[s.id]()}</span></li>`;
+  }).join("")}</ul>`;
 
 function desktopNav(page) {
   const items = NAV.map((item) => {
@@ -143,6 +151,7 @@ export function renderFooter() {
             ${brandLockup()}
             <p class="footer-tagline">${SITE.tagline}</p>
             <p class="t-small t-muted">Overseas recruitment support for skilled professionals and the employers who need them.</p>
+            ${socialLinks()}
           </div>
           <div>
             <h2 class="footer-title">Explore</h2>

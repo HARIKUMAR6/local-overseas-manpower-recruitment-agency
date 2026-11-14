@@ -23,3 +23,15 @@ export const NAV = [
 ];
 
 export const CTA = { id: "apply", label: "Apply Now", href: "contact.html#apply" };
+
+/**
+ * Social profiles shown in the footer. Paste each account URL into "url"
+ * (e.g. "https://www.facebook.com/yourpage"). Entries with an empty url are
+ * shown as plain icons without a link until a URL is added.
+ */
+export const SOCIAL = [
+  { id: "facebook", label: "Facebook", url: "" },
+  { id: "instagram", label: "Instagram", url: "" },
+  { id: "linkedin", label: "LinkedIn", url: "" },
+  { id: "youtube", label: "YouTube", url: "" },
+];
